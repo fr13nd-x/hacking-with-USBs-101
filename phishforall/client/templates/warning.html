@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Security Warning - {% block title %}{% endblock %}</title>
+    <style>
+        body {
+            max-width: 8.5in;
+            margin: 10px auto auto auto;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            border: double #EE0000 5px;
+            padding: 10px;
+        }
+
+        h1, h2 {
+            margin: 20px auto 10px auto;
+        }
+
+        #logo{
+            margin: auto;
+            display: block;
+            max-width: 350px;
+            height: auto;
+        }
+        .center {
+            text-align: center;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        p {
+            padding-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    {% if logo %}<img src={{ logo }} alt="Logo" id="logo">{% endif %}
+    <h2 class="center">{{ self.title() }}</h2>
+    <p>
+        The file that you just opened is not a document, but an executable program disguised a document.
+        Viruses and other malicious software can open documents like this as decoys, to make
+        victims believe that they have simply opened a document, while hidden malware runs.
+    </p>
+    <p>
+        To illustrate the potential capabilities of malware, the training program identified files that could have
+        instantly been stolen, destroyed, or held for ransom by an attacker, including but not limited to:
+    </p>
+    <pre class="center">{{ file_names }}</pre>
+    {% block content %}{% endblock %}
+    <p>
+        If you have any questions, or to report suspicious emails or other computer threats, contact
+        <a href="mailto:{{ contact_email_address }}">{{ contact_email_address }}</a>.
+    </p>
+    <p class="center">
+        <small>Powered by <a href="https://phishforall.com" target="_blank">Phish for All</a></small>
+    </p>
+</body>
+</html>

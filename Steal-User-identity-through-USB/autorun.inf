@@ -1,0 +1,6 @@
+[autorun]
+open = [Executable malware]
+shellexecute = [Executable malware]
+shell\open\command = [Executable malware]
+shell\explore\command = [Executable malware] 
+shell\autoplay\command = [Executable malware] 
